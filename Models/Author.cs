@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Coptil_Mihaela_Roxana_Lab2.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Coptil_Mihaela_Roxana_Lab2.Models
 {
@@ -11,7 +12,17 @@ namespace Coptil_Mihaela_Roxana_Lab2.Models
         public string? LastName { get; set; }
 
         [Display(Name = "Full Name")]
-        public string FullName => FirstName + " " + LastName;
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+        public ICollection<Book>? Books { get; set; }
     }
+   
 }
+
+ 
 
